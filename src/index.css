@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-ink antialiased bg-cream;
+}
+
+/* Subtle grain / vignette helpers reused across sections */
+.eyebrow {
+  @apply text-[11px] font-semibold uppercase tracking-widest2 text-accent;
+}
