@@ -16,10 +16,10 @@ export default function Hero() {
         style={{ backgroundImage: 'url(/assets/hero-mountains.jpg)' }}
       />
       {/* Soft overlays — keep the photo visible while text stays legible */}
-      <div aria-hidden="true" className="absolute inset-0 bg-navy-deep/40" />
+      <div aria-hidden="true" className="absolute inset-0 bg-navy-deep/45" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-navy-deep/20 via-transparent to-navy-deep/60"
+        className="absolute inset-0 bg-gradient-to-b from-navy-deep/30 via-navy-deep/25 to-navy-deep/60"
       />
 
       <div className="relative mx-auto w-full max-w-3xl px-6">
@@ -47,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.55 }}
-          className="mx-auto mt-10 max-w-2xl font-serif text-xl leading-relaxed text-white/80 sm:text-2xl"
+          className="mx-auto mt-10 max-w-3xl font-serif text-2xl leading-relaxed text-white/85 sm:text-[1.7rem]"
         >
           Mainstay Partners was founded by Max Francois-Poncet and Jason Vahn in 2019 to partner with
           small business owners. In the years since, we have partnered with dozens of businesses to

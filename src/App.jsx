@@ -8,7 +8,7 @@ const APPROACH = [
   {
     n: '01',
     name: 'Investment Focus',
-    desc: 'We target services businesses with $500K–$5M of EBITDA, where our hands-on approach creates the most meaningful and lasting impact.',
+    desc: 'We target services businesses with $500K–$5M of EBITDA, where our hands-on approach creates the most meaningful and lasting impact. However, we prioritize the right partnership over strict numbers, and happily consider opportunities outside our typical range.',
   },
   {
     n: '02',
@@ -58,10 +58,8 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <Reveal>
             <p className="eyebrow mb-6">Our Approach</p>
-            <h2 className="font-serif text-5xl font-medium leading-[1.05] text-navy sm:text-6xl">
-              Patient Capital,
-              <br />
-              Lasting Impact
+            <h2 className="max-w-4xl font-serif text-5xl font-medium leading-[1.05] text-navy sm:text-6xl">
+              We help founders scale their businesses
             </h2>
             <span className="mt-8 block h-px w-14 bg-accent" />
           </Reveal>
@@ -70,9 +68,9 @@ export default function App() {
           <div className="mt-16 grid gap-12 md:grid-cols-3 lg:gap-16">
             {APPROACH.map((item, i) => (
               <Reveal key={item.n} delay={i * 0.1}>
-                <p className="mb-4 font-serif text-base text-accent">{item.n}</p>
-                <h3 className="mb-4 font-serif text-3xl font-medium text-navy">{item.name}</h3>
-                <p className="text-[15px] leading-relaxed text-ink/70">{item.desc}</p>
+                <p className="mb-4 font-serif text-lg text-accent">{item.n}</p>
+                <h3 className="mb-4 font-serif text-4xl font-medium text-navy">{item.name}</h3>
+                <p className="text-[17px] leading-relaxed text-ink/75">{item.desc}</p>
               </Reveal>
             ))}
           </div>
