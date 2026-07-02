@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Reveal from './components/Reveal.jsx'
 import Logo from './components/Logo.jsx'
+import BioModal from './components/BioModal.jsx'
 
 const APPROACH = [
   {
@@ -23,31 +24,48 @@ const APPROACH = [
 ]
 
 const STATS = [
-  { value: '50+', label: 'Locations across 18 states' },
-  { value: '5x', label: 'Revenue growth' },
-  { value: '5x', label: 'Staff growth' },
-  { value: '6', label: 'Years alongside the founding family' },
+  { value: '45yr', label: 'Multi-generational, family-owned business' },
+  { value: '50+', label: 'Locations across 5 regional clusters and 18 geographies' },
+  { value: '18', label: 'Acquisitions' },
+  { value: '5x', label: 'EBITDA and headcount growth' },
 ]
 
 const TEAM = [
   {
     name: 'Jason Vahn',
     role: 'Managing Partner',
-    bio: 'Co-founded Fidelity Memorial Group, a 50+ location platform built through 18 acquisitions, exited 2025. Previously an analyst at Canyon Partners. M.B.A. Wharton, B.A. (PPE), Penn.',
+    img: '/assets/team/jason.jpg',
+    bio: [
+      'Jason is a Managing Partner and Co-Founder of Mainstay Partners. In partnership with Max, Jason co-founded Fidelity Memorial Group, a multi-state funeral services platform with 50+ locations across 18 acquisitions. Mainstay Partners exited their investment in 2025.',
+      'Prior to Mainstay, Jason worked as an investment analyst at Canyon Partners, where he focused on debt and equity investments in the healthcare sector. Jason is a member of the Penn Libraries Young Alumni Board, the Children’s Health Council at Cornell Weill, and the Reverse Rett Junior Board.',
+      'Jason earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Jason was raised in Los Angeles and now lives in New York with his wife and son.',
+    ],
   },
   {
     name: 'Max Francois-Poncet',
     role: 'Managing Partner',
-    bio: 'Co-founded Fidelity Memorial Group alongside Jason, exited 2025. Previously at Permira and led business development at Gratify. M.B.A. Wharton, B.A. (PPE), Penn.',
+    img: '/assets/team/max.jpg',
+    bio: [
+      'Max is a Managing Partner and Co-Founder of Mainstay Partners. In partnership with Jason, Max co-founded Fidelity Memorial Group, a multi-state funeral services platform with 50+ locations across 18 acquisitions. Mainstay Partners exited their investment in 2025.',
+      'Prior to Mainstay, Max completed a pre-MBA internship at Permira, a $35B+ global private equity firm, where he focused on consumer investments. Previously, he led business development at Grability, a grocery software company, and was an associate at Burch Creative Capital, a consumer and technology focused family office.',
+      'Max earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Max was raised in Paris and now lives in New York with his wife and son.',
+    ],
   },
   {
     name: 'Aaron Brandeis',
     role: 'Operating Partner',
-    bio: 'Joined in 2026 focusing on new platform investments and operations. Previously an investor at Oak Hill Capital across B2B services and technology. M.B.A. HBS, B.A. Economics, Penn.',
+    img: '/assets/team/aaron.jpg',
+    bio: [
+      'Aaron Brandeis is an Operating Partner at Mainstay Partners, where he focuses on new platform investments and operations. He joined Mainstay in 2026 following his M.B.A. from London Business School.',
+      'Prior to Mainstay, Aaron was an investor at Oak Hill Capital, where he evaluated and executed majority buyouts and buy-and-build investments across B2B services and technology, including Mercer Advisors and Kestra Financial.',
+      'Aaron earned a B.A. in Economics from the University of Pennsylvania. He was raised in New York City where he lives full-time, close to his parents, twin brother, and older sister.',
+    ],
   },
 ]
 
 export default function App() {
+  const [activeBio, setActiveBio] = useState(null)
+
   return (
     <div className="bg-cream">
       <Header />
@@ -79,11 +97,19 @@ export default function App() {
           <div className="my-16 h-px w-full bg-navy/10 lg:my-20" />
 
           {/* Track record */}
-          <Reveal className="mb-12 flex flex-wrap items-center gap-4">
+          <Reveal className="mb-6 flex flex-wrap items-center gap-4">
             <h3 className="font-serif text-4xl font-medium text-navy">Fidelity Memorial Group</h3>
             <span className="rounded-sm border border-accent/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest2 text-accent">
               Exited 2025
             </span>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <p className="mb-14 max-w-3xl text-[17px] leading-relaxed text-ink/75">
+              Max and Jason co-founded FMG in partnership with a multi-generational, family-owned
+              business deeply rooted in the Southeast. Today, the founding family continues to run the
+              business alongside the FMG team.
+            </p>
           </Reveal>
 
           <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
@@ -111,14 +137,34 @@ export default function App() {
             {TEAM.map((person, i) => (
               <Reveal key={person.name} delay={i * 0.12}>
                 <article className="group">
-                  <div className="mb-5 aspect-[4/5] overflow-hidden rounded-sm bg-gradient-to-b from-navy-light to-navy">
-                    <div className="h-full w-full bg-gradient-to-t from-navy/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  </div>
-                  <h3 className="font-serif text-xl font-medium text-navy">{person.name}</h3>
-                  <p className="mb-3 mt-1 text-[11px] font-semibold uppercase tracking-widest2 text-accent">
-                    {person.role}
-                  </p>
-                  <p className="text-[14px] leading-relaxed text-ink/70">{person.bio}</p>
+                  <button
+                    type="button"
+                    onClick={() => setActiveBio(person)}
+                    className="block w-full cursor-pointer text-left"
+                    aria-label={`View ${person.name}'s bio`}
+                  >
+                    <div className="relative mb-5 aspect-[4/5] overflow-hidden rounded-sm bg-navy-light">
+                      <img
+                        src={person.img}
+                        alt={person.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                      {/* Hover veil hint */}
+                      <div className="absolute inset-0 flex items-end bg-gradient-to-t from-navy-deep/70 via-navy-deep/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <span className="m-5 text-[11px] font-semibold uppercase tracking-widest2 text-white">
+                          View bio →
+                        </span>
+                      </div>
+                    </div>
+                    <h3 className="font-serif text-2xl font-medium text-navy">{person.name}</h3>
+                    <p className="mb-2 mt-1 text-[11px] font-semibold uppercase tracking-widest2 text-accent">
+                      {person.role}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-[12px] font-medium text-ink/60 transition-colors group-hover:text-accent">
+                      View bio <span aria-hidden="true">→</span>
+                    </span>
+                  </button>
                 </article>
               </Reveal>
             ))}
@@ -135,23 +181,25 @@ export default function App() {
         <div className="relative mx-auto max-w-6xl px-6 lg:px-10">
           <Reveal>
             <p className="mb-8 text-[11px] font-semibold uppercase tracking-widest2 text-accent">
-              Get in Touch
+              Contact
             </p>
-            <p className="max-w-2xl font-serif text-3xl font-medium leading-snug sm:text-4xl lg:text-[2.75rem]">
-              If you're a founder exploring a long-term partnership, we'd love to hear from you.
+            <p className="max-w-3xl font-serif text-3xl font-medium leading-snug sm:text-4xl lg:text-[2.6rem]">
+              Whether you are an entrepreneur, a family business steward, or an intermediary
+              interested in discussing a sustainable partnership or ownership change, we look forward
+              to hearing from you.
             </p>
           </Reveal>
 
           <Reveal delay={0.15} className="mt-16 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-3">
             <div>
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest2 text-white/40">
-                Connect
+                Email
               </p>
               <a
-                href="mailto:hello@mainstaypartners.com"
+                href="mailto:info@mainstaypartners.com"
                 className="inline-flex items-center gap-2 text-[15px] text-white transition-colors hover:text-accent"
               >
-                Connect with us <span aria-hidden="true">→</span>
+                info@mainstaypartners.com
               </a>
             </div>
             <div>
@@ -184,6 +232,8 @@ export default function App() {
           <p className="text-[12px] text-white/40">© 2026 · All rights reserved</p>
         </div>
       </footer>
+
+      <BioModal person={activeBio} onClose={() => setActiveBio(null)} />
     </div>
   )
 }
