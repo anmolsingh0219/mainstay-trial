@@ -212,7 +212,7 @@ export default function App() {
                   LinkedIn
                 </p>
                 <a
-                  href="https://www.linkedin.com/company/mainstay-partners"
+                  href="https://www.linkedin.com/company/mainstaypartners/"
                   target="_blank"
                   rel="noopener"
                   className="inline-flex items-center gap-2.5 font-serif text-xl text-navy transition-colors hover:text-accent"
