@@ -24,8 +24,8 @@ const APPROACH = [
 ]
 
 const STATS = [
-  { value: '45yr', label: 'Multi-generational, family-owned business' },
-  { value: '50+', label: 'Locations across 5 regional clusters and 18 geographies' },
+  { value: '45yr', label: 'Multi-generational family-owned business' },
+  { value: '50+', label: 'Locations across 18 metros' },
   { value: '18', label: 'Acquisitions' },
   { value: '5x', label: 'EBITDA and headcount growth' },
 ]
@@ -83,11 +83,13 @@ export default function App() {
           </Reveal>
 
           {/* Three pillars */}
-          <div className="mt-16 grid gap-12 md:grid-cols-3 lg:gap-16">
+          <div className="mt-16 grid gap-10 md:grid-cols-3 lg:gap-12">
             {APPROACH.map((item, i) => (
               <Reveal key={item.n} delay={i * 0.1}>
                 <p className="mb-4 font-serif text-lg text-accent">{item.n}</p>
-                <h3 className="mb-4 font-serif text-4xl font-medium text-navy">{item.name}</h3>
+                <h3 className="mb-4 whitespace-nowrap font-serif text-[1.75rem] font-medium text-navy md:whitespace-normal lg:whitespace-nowrap">
+                  {item.name}
+                </h3>
                 <p className="text-[17px] leading-relaxed text-ink/75">{item.desc}</p>
               </Reveal>
             ))}
@@ -112,11 +114,13 @@ export default function App() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4 md:gap-y-0">
+          <div className="grid grid-cols-2 items-stretch gap-y-10 md:grid-cols-4 md:gap-y-0">
             {STATS.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08}>
-                <div className="border-l border-navy/15 pl-5">
-                  <p className="font-serif text-6xl font-medium leading-none text-accent">{s.value}</p>
+              <Reveal key={s.label} delay={i * 0.08} className="h-full">
+                <div className="h-full border-l border-navy/15 pl-5">
+                  <p className="font-sans text-5xl font-semibold leading-none tracking-tight text-accent">
+                    {s.value}
+                  </p>
                   <p className="mt-4 text-[11px] font-semibold uppercase tracking-widest2 text-ink/50">
                     {s.label}
                   </p>
@@ -173,55 +177,54 @@ export default function App() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="relative overflow-hidden bg-navy-deep py-24 text-white lg:py-32">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
-        />
-        <div className="relative mx-auto max-w-6xl px-6 lg:px-10">
+      <section id="contact" className="bg-cream py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <Reveal>
-            <p className="mb-8 text-[11px] font-semibold uppercase tracking-widest2 text-accent">
+            <p className="eyebrow mb-6">Get in Touch</p>
+            <h2 className="font-serif text-5xl font-medium leading-[1.05] text-navy sm:text-6xl">
               Contact
-            </p>
-            <p className="max-w-3xl font-serif text-3xl font-medium leading-snug sm:text-4xl lg:text-[2.6rem]">
-              Whether you are an entrepreneur, a family business steward, or an intermediary
-              interested in discussing a sustainable partnership or ownership change, we look forward
-              to hearing from you.
-            </p>
+            </h2>
+            <span className="mt-8 block h-px w-14 bg-accent" />
           </Reveal>
 
-          <Reveal delay={0.15} className="mt-16 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-3">
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest2 text-white/40">
-                Email
+          <div className="mt-16 grid gap-12 md:grid-cols-2 lg:mt-20 lg:gap-20">
+            <Reveal>
+              <p className="max-w-xl font-serif text-2xl leading-relaxed text-navy/90 sm:text-[1.7rem]">
+                If you are a founder, family-owned business, or broker looking to explore a long-term
+                partnership or transition, we'd love to connect.
               </p>
-              <a
-                href="mailto:info@mainstaypartners.com"
-                className="inline-flex items-center gap-2 text-[15px] text-white transition-colors hover:text-accent"
-              >
-                info@mainstaypartners.com
-              </a>
-            </div>
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest2 text-white/40">
-                Offices
-              </p>
-              <p className="text-[15px] text-white/80">New York, NY</p>
-            </div>
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest2 text-white/40">
-                LinkedIn
-              </p>
-              <a
-                href="https://www.linkedin.com/company/mainstay-partners"
-                target="_blank"
-                rel="noopener"
-                className="text-[15px] text-white/80 transition-colors hover:text-accent"
-              >
-                Mainstay Partners
-              </a>
-            </div>
-          </Reveal>
+            </Reveal>
+
+            <Reveal delay={0.1} className="space-y-10">
+              <div>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest2 text-ink/40">
+                  Email
+                </p>
+                <a
+                  href="mailto:info@mainstaypartners.com"
+                  className="font-serif text-xl text-navy transition-colors hover:text-accent"
+                >
+                  info@mainstaypartners.com
+                </a>
+              </div>
+              <div>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest2 text-ink/40">
+                  LinkedIn
+                </p>
+                <a
+                  href="https://www.linkedin.com/company/mainstay-partners"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2.5 font-serif text-xl text-navy transition-colors hover:text-accent"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+                  </svg>
+                  Mainstay Partners
+                </a>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
