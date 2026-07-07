@@ -38,7 +38,7 @@ const TEAM = [
     bio: [
       'Jason is a Managing Partner and Co-Founder of Mainstay Partners. In partnership with Max, Jason co-founded Fidelity Memorial Group, a multi-state funeral services platform with 50+ locations across 18 acquisitions. Mainstay Partners exited their investment in 2025.',
       'Prior to Mainstay, Jason worked as an investment analyst at Canyon Partners, where he focused on debt and equity investments in the healthcare sector. Jason is a member of the Penn Libraries Young Alumni Board, the Children’s Health Council at Cornell Weill, and the Reverse Rett Junior Board.',
-      'Jason earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Jason now lives in Los Angeles with his wife and son.',
+      'Jason earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Jason now lives in Los Angeles with his wife Blair and son Oliver.',
     ],
   },
   {
@@ -48,7 +48,7 @@ const TEAM = [
     bio: [
       'Max is a Managing Partner and Co-Founder of Mainstay Partners. In partnership with Jason, Max co-founded Fidelity Memorial Group, a multi-state funeral services platform with 50+ locations across 18 acquisitions. Mainstay Partners exited their investment in 2025.',
       'Prior to Mainstay, Max completed a pre-MBA internship at Permira, a $35B+ global private equity firm, where he focused on consumer investments. Previously, he led business development at Grability, a grocery software company, and was an associate at Burch Creative Capital, a consumer and technology focused family office.',
-      'Max earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Max was raised in Paris and now lives in New York with his wife and son.',
+      'Max earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Max was raised in Paris and now lives in New York with his wife Sophia and two kids, Gabriel and Clara.',
     ],
   },
   {

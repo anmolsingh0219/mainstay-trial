@@ -66,6 +66,17 @@ export default function Hero() {
       >
         Scroll
       </motion.a>
+
+      {/* Photo caption */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.9, delay: 1.2 }}
+        className="absolute bottom-6 left-6 max-w-[15rem] text-left font-serif text-sm italic leading-snug text-white/60 sm:bottom-8 sm:left-10 sm:max-w-xs sm:text-base"
+      >
+        Pictured: the beautiful streets of Savannah, Georgia, a nod to the city where we built our
+        first partnership.
+      </motion.p>
     </section>
   )
 }
