@@ -9,12 +9,12 @@ const APPROACH = [
   {
     n: '01',
     name: 'Investment Focus',
-    desc: 'We target services businesses with $500K–$5M of EBITDA, where our hands-on approach creates the most meaningful and lasting impact. However, we prioritize the right partnership over strict numbers, and happily consider opportunities outside our typical range.',
+    desc: 'We target services businesses where our hands-on approach creates the most meaningful and lasting impact. We aren’t boxed in by company size and prefer to prioritize the right partnership over following rigid financial criteria.',
   },
   {
     n: '02',
     name: 'Operational Partnership',
-    desc: 'We are active partners, not just capital providers. We work hands-on with management to professionalize operations, recruit leadership, and implement the systems that allow businesses to scale.',
+    desc: 'We are active partners, not just capital providers. We work hands-on with management to professionalize operations, recruit leadership, and implement the systems that allow businesses to scale and employees to benefit.',
   },
   {
     n: '03',
@@ -38,7 +38,7 @@ const TEAM = [
     bio: [
       'Jason is a Managing Partner and Co-Founder of Mainstay Partners. In partnership with Max, Jason co-founded Fidelity Memorial Group, a multi-state funeral services platform with 50+ locations across 18 acquisitions. Mainstay Partners exited their investment in 2025.',
       'Prior to Mainstay, Jason worked as an investment analyst at Canyon Partners, where he focused on debt and equity investments in the healthcare sector. Jason is a member of the Penn Libraries Young Alumni Board, the Children’s Health Council at Cornell Weill, and the Reverse Rett Junior Board.',
-      'Jason earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Jason was raised in Los Angeles and now lives in New York with his wife and son.',
+      'Jason earned an M.B.A. from the Wharton School and a B.A. in Philosophy, Politics, and Economics from the University of Pennsylvania. Jason now lives in Los Angeles with his wife and son.',
     ],
   },
   {
@@ -56,9 +56,9 @@ const TEAM = [
     role: 'Operating Partner',
     img: '/assets/team/aaron.jpg',
     bio: [
-      'Aaron Brandeis is an Operating Partner at Mainstay Partners, where he focuses on new platform investments and operations. He joined Mainstay in 2026 following his M.B.A. from London Business School.',
-      'Prior to Mainstay, Aaron was an investor at Oak Hill Capital, where he evaluated and executed majority buyouts and buy-and-build investments across B2B services and technology, including Mercer Advisors and Kestra Financial.',
-      'Aaron earned a B.A. in Economics from the University of Pennsylvania. He was raised in New York City where he lives full-time, close to his parents, twin brother, and older sister.',
+      'Aaron is an Operating Partner at Mainstay Partners, where he focuses on finding new platform investments and helping companies scale. He joined the firm in 2026 after earning his M.B.A. from London Business School.',
+      'Prior to Mainstay, Aaron was an investor at Oak Hill Capital. There, he worked closely on buyouts and growth strategies across services and technology businesses, including key investments like Mercer Advisors and Kestra Financial.',
+      'Aaron graduated summa cum laude from the University of Pennsylvania with a B.A. in Economics. He was raised in New York City where he lives full-time, close to his parents, twin brother, and older sister.',
     ],
   },
 ]
@@ -118,7 +118,7 @@ export default function App() {
             {STATS.map((s, i) => (
               <Reveal key={s.label} delay={i * 0.08} className="h-full">
                 <div className="h-full border-l border-navy/15 pl-5">
-                  <p className="font-sans text-5xl font-semibold leading-none tracking-tight text-accent">
+                  <p className="font-serif text-6xl font-normal leading-none text-accent">
                     {s.value}
                   </p>
                   <p className="mt-4 text-[11px] font-semibold uppercase tracking-widest2 text-ink/50">
@@ -190,8 +190,8 @@ export default function App() {
           <div className="mt-16 grid gap-12 md:grid-cols-2 lg:mt-20 lg:gap-20">
             <Reveal>
               <p className="max-w-xl font-serif text-2xl leading-relaxed text-navy/90 sm:text-[1.7rem]">
-                If you are a founder, family-owned business, or broker looking to explore a long-term
-                partnership or transition, we'd love to connect.
+                If you are a founder, family-owned business, or business broker looking to explore a
+                long-term partnership or transition, we'd love to connect.
               </p>
             </Reveal>
 

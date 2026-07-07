@@ -38,9 +38,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35 }}
-          className="mt-8 font-sans text-lg font-light text-white/90 sm:text-xl"
+          className="mt-8 font-serif text-2xl text-white/90 sm:text-3xl"
         >
-          Focused on Long-Term Partnerships
+          Enduring Businesses, Built Through Partnership
         </motion.p>
 
         <motion.p
@@ -49,9 +49,10 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.55 }}
           className="mx-auto mt-10 max-w-3xl font-serif text-2xl leading-relaxed text-white/85 sm:text-[1.7rem]"
         >
-          Mainstay Partners was founded by Max Francois-Poncet and Jason Vahn in 2019 to partner with
-          small business owners. In the years since, we have partnered with dozens of businesses to
-          provide capital and support.
+          Mainstay Partners was founded in 2019 to serve as trusted stewards for small business
+          owners entering their next chapter. In the years since, we have partnered with dozens of
+          owners, providing patient capital, strategic guidance, and hands-on support to preserve
+          their legacies and ensure long-term growth.
         </motion.p>
       </div>
 
